@@ -70,6 +70,8 @@ UINT App_ThreadX_Init(VOID *memory_ptr)
   /* USER CODE END App_ThreadX_MEM_POOL */
 
   /* USER CODE BEGIN App_ThreadX_Init */
+  tx_thread_create(&red_thread_ptr, "Red LED", red_thread, 0x1234, red_thread_stack, THREAD_STACK_SIZE, 15, 15, 1, TX_AUTO_START);
+  tx_thread_create(&green_thread_ptr, "Green LED", green_thread, 0x1234, green_thread_stack, THREAD_STACK_SIZE, 15, 15, 1, TX_AUTO_START);
   /* USER CODE END App_ThreadX_Init */
 
   return ret;
